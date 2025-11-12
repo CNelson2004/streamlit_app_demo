@@ -1,4 +1,5 @@
 import streamlit as st
+import matplotlib.pyplot as plt
 
 def main():
     st.title("Hello, Streamlit!")
@@ -17,6 +18,20 @@ def main():
         #Creates a text box below the button when it is clicked
         st.info(f"Your favorite number is: {fav_num}!")
 
+    #doing pyplot
+    # Sample data
+    categories = ['A', 'B', 'C', 'D']
+    values = [10, 24, 36, 18]
+
+    # Create the plot
+    fig, ax = plt.subplots()
+    ax.bar(categories, values, color='skyblue')
+    ax.set_xlabel('Category')
+    ax.set_ylabel('Value')
+    ax.set_title('Simple Bar Plot Example')
+
+    # Display it in Streamlit
+    st.pyplot(fig)
 
 
 if __name__ == "__main__":
